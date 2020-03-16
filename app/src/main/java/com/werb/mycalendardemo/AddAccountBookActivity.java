@@ -37,9 +37,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * 添加活动时间界面
+ * 添加账簿界面
  */
-public class AddScheduleActivity extends AppCompatActivity {
+public class AddAccountBookActivity extends AppCompatActivity {
 
     private DatePickerDialog mDataPicker;
     private TimePickerDialog mStartTimePicker, mEndTimePicker;
@@ -102,27 +102,27 @@ public class AddScheduleActivity extends AppCompatActivity {
 
     @OnClick(R.id.layout_alarm_replay)
     void openSetReplayActivity() {
-        startActivityForResult(new Intent(AddScheduleActivity.this, SetRePlayActivity.class), 0);
+        startActivityForResult(new Intent(AddAccountBookActivity.this, SetRePlayActivity.class), 0);
     }
 
     @OnClick(R.id.layout_alarm_remind)
     void openSetAlarmTimeActivity() {
-        startActivityForResult(new Intent(AddScheduleActivity.this, SetAlarmTimeActivity.class), 1);
+        startActivityForResult(new Intent(AddAccountBookActivity.this, SetAlarmTimeActivity.class), 1);
     }
 
     @OnClick(R.id.layout_alarm_local)
     void openSetLocalActivity() {
-        startActivityForResult(new Intent(AddScheduleActivity.this, SetLocalActivity.class), 2);
+        startActivityForResult(new Intent(AddAccountBookActivity.this, SetLocalActivity.class), 2);
     }
 
     @OnClick(R.id.layout_alarm_color)
     void openSetColorActivity() {
-        startActivityForResult(new Intent(AddScheduleActivity.this, SetColorActivity.class), 3);
+        startActivityForResult(new Intent(AddAccountBookActivity.this, SetColorActivity.class), 3);
     }
 
     @OnClick(R.id.layout_alarm_tone_Path)
     void openSetAlarmToneActivity() {
-        startActivityForResult(new Intent(AddScheduleActivity.this, SetAlarmToneActivity.class), 4);
+        startActivityForResult(new Intent(AddAccountBookActivity.this, SetAlarmToneActivity.class), 4);
     }
 
     @Bind(R.id.sw_all_day)
@@ -233,7 +233,7 @@ public class AddScheduleActivity extends AppCompatActivity {
         //设置铃声
         if (alarm_tone_Path.getText().toString().equals("选择铃声")) {
             Uri uri = RingtoneManager.getActualDefaultRingtoneUri(
-                    AddScheduleActivity.this, RingtoneManager.TYPE_RINGTONE);
+                    AddAccountBookActivity.this, RingtoneManager.TYPE_RINGTONE);
             alarmBean.setAlarmTonePath(uri.toString());
         }
 
@@ -276,7 +276,7 @@ public class AddScheduleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_schedule);
+        setContentView(R.layout.activity_add_accuntbook);
 
         ButterKnife.bind(this);
 
@@ -291,10 +291,7 @@ public class AddScheduleActivity extends AppCompatActivity {
             alarm_description.setText(bean.getDescription());
             alarm_local.setText(bean.getLocal());
             alarm_replay.setText(bean.getReplay());
-//            alarm_date.setText(DateHelper.getScheduleDate(bean));
-//            alarm_start_time.setText(DateHelper.getStartTime(bean));
-//            alarm_end_time.setText(DateHelper.getEndTime(bean));
-            insert_update_title.setText("修改提醒");
+            insert_update_title.setText("修改礼簿");
             //动态改变颜色
             int colorId = ColorUtils.getColorFromStr(bean.getAlarmColor());
             action_bar.setBackgroundColor(getResources().getColor(colorId));
@@ -303,7 +300,7 @@ public class AddScheduleActivity extends AppCompatActivity {
                 window.setStatusBarColor(getResources().getColor(colorId));
             }
         } else {
-            insert_update_title.setText("新建提醒");
+            insert_update_title.setText("新建礼簿");
         }
     }
 

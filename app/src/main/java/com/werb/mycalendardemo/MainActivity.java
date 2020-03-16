@@ -223,6 +223,16 @@ public class MainActivity extends AppCompatActivity implements RapidFloatingActi
                         .setIconPressedColor(0xffbf360c)
                         .setLabelSizeSp(14)
                         .setWrapper(0)
+
+        );
+        items.add(new RFACLabelItem<Integer>()
+                .setLabel("添加礼簿")
+                .setResId(R.drawable.ic_access_alarms_white_24dp)
+                .setIconNormalColor(0xffd84315)
+                .setIconPressedColor(0xffbf360c)
+                .setLabelSizeSp(14)
+                .setWrapper(1)
+
         );
         rfaContent
                 .setItems(items)
@@ -248,6 +258,12 @@ public class MainActivity extends AppCompatActivity implements RapidFloatingActi
     public void onRFACItemIconClick(int i, RFACLabelItem rfacLabelItem) {
         if (i == 0) {
             Intent intent = new Intent(MainActivity.this, AddScheduleActivity.class);
+            intent.putExtra("type","mainToAdd");
+            startActivity(intent);
+            finish();
+        }else
+        if (i == 1) {
+            Intent intent = new Intent(MainActivity.this, AddAccountBookActivity.class);
             intent.putExtra("type","mainToAdd");
             startActivity(intent);
             finish();

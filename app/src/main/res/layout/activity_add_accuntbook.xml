@@ -48,7 +48,7 @@
                 android:paddingLeft="20dp"
                 android:layout_marginTop="5dp"
                 android:background="@null"
-                android:hint="请输提醒名称"/>
+                android:hint="请输入礼簿名称"/>
 
             <View
                 android:layout_width="match_parent"
@@ -63,7 +63,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-
+                    android:visibility="gone"
                     android:layout_height="50dp">
 
                     <ImageView
@@ -106,6 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center_vertical"
+                    android:visibility="gone"
                     android:paddingLeft="75dp"
                     android:textColor="#000"
                     android:text="选择开始时间"/>
@@ -114,6 +115,7 @@
                     android:id="@+id/alarm_end_time"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:visibility="gone"
                     android:gravity="center_vertical"
                     android:paddingLeft="75dp"
                     android:textColor="#000"
@@ -122,6 +124,7 @@
                 <RelativeLayout
                     android:id="@+id/layout_alarm_replay"
                     android:layout_width="match_parent"
+                    android:visibility="gone"
                     android:layout_height="50dp">
 
                     <ImageView
@@ -183,6 +186,7 @@
                 <RelativeLayout
                     android:id="@+id/layout_alarm_vibrate"
                     android:layout_width="match_parent"
+                    android:visibility="gone"
                     android:layout_height="50dp">
 
                     <ImageView
@@ -221,6 +225,7 @@
                 <RelativeLayout
                     android:id="@+id/layout_alarm_tone_Path"
                     android:layout_width="match_parent"
+                    android:visibility="gone"
                     android:layout_height="50dp">
 
                     <ImageView
